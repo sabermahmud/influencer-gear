@@ -5,9 +5,96 @@
 }
 
 :root {
-  --primary-color: #ff6b6b;
+  --primary-color: #E02C6D;
   --secondary-color: #4ecdc4;
-  --background-color: #f7f7f7;
-  --text-color: #333;
+  --background-color: #FFFFFF;
+  --body-background-color: #AAAAAA;
+  --gray-text-color: #787885;
+  --darker-text-color: #000000;
+  --dark-text-color: #18191F;
+  --stars-fill-color: #FB8200;
+  --common-text-color: #3a3a3a;
+  --primary-font-size: 2.5rem;
+  --secondary-font-size: 1.5rem;
+  --primary-font-weight: 700;
+  --secondary-font-weight: 400;
+  --primary-heading-font-size: 3.5rem;
+  --secondary-heading-font-size: 2.5rem;
+  ---tertiary-heading-font-size: 1.8rem;
+  --primary-heading-font-weight: 800;
+  --secondary-heading-font-weight: 600;
+  --tertiary-heading-font-weight: 500;
+  --button-background-color: #E02C6D;
+  --button-text-color: #fff;
+}
+
+
+
+body {
+  font-family: var(--primary-font-family, "Poppins"), sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: var (--secondary-font-size);
+}
+
+.navLinks>ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: var(---tertiary-font-size)
+}
+
+.navLinks>ul>li>a {
+  color: var(--dark-text-color);
+  text-decoration: none;
+  font-weight: var(--secondary-font-weight);
+}
+
+.navLinks button{
+  background: none;
+  border: none;
+  font-size: var(--secondary-font-size);
+}
+
+/* small devices */
+
+@media screen and (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navLinks>ul{
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  
+}
+
+/* mid device */
+
+@media screen and (min-width:576px) and (max-width: 768px){
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navLinks>ul {
+    padding: 0;
+    margin: 0;
+  }
 }
 
