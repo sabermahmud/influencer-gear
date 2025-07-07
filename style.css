@@ -16,6 +16,7 @@
   --common-text-color: #3a3a3a;
   --primary-font-size: 2.5rem;
   --secondary-font-size: 1.5rem;
+  --normal-font-size: 1rem;
   --primary-font-weight: 700;
   --secondary-font-weight: 400;
   --primary-heading-font-size: 3.5rem;
@@ -49,6 +50,10 @@ body {
   font-size: var (--secondary-font-size);
 }
 
+.logoPart {
+  color: var(--primary-color);
+}
+
 .navLinks>ul {
   display: flex;
   gap: 20px;
@@ -60,6 +65,11 @@ body {
   color: var(--dark-text-color);
   text-decoration: none;
   font-weight: var(--secondary-font-weight);
+  transition: color .50s ease;
+}
+
+.navLinks>ul>li>a:hover {
+  color: var(--primary-color);
 }
 
 .navLinks button{
@@ -68,33 +78,195 @@ body {
   font-size: var(--secondary-font-size);
 }
 
+.banner{
+  max-width: 1440px;
+  margin: 35px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bannerContent{
+  max-width: 100%;
+  padding: 0px 80px 20px 0px;
+  box-sizing: border-box;
+}
+
+.bannerContent h1 {
+  font-size: var(--primary-heading-font-size);
+  font-weight: var(--primary-heading-font-weight);
+  color: var(--dark-text-color);
+}
+
+.bannerContent p {
+  font-size: var(--normal-font-size);
+  font-weight: var(--secondary-font-weight);
+  color: var(--common-text-color);
+  margin-top: 10px;
+}
+
+.bannerContent button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: var(--secondary-font-size);
+  cursor: pointer;
+}
+
+.bannerContent button:hover {
+  background-color: var(--button-text-color);
+  color: var(--button-background-color);
+  border: 2px solid var(--button-background-color);
+}
+
+
+.bannerImage{
+  max-width: 100%;
+  height: auto;
+}
+
+.mainCamera{
+  position: relative;
+}
+
+.circle{
+  position: absolute;
+}
 /* small devices */
 
 @media screen and (max-width: 576px) {
+
+  /* navBar section */
   .navbar {
     flex-direction: column;
     align-items: center;
   }
   .navLinks>ul{
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
     padding: 0;
     margin: 0;
   }
 
+  /* banner section */
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    flex-flow: column-reverse;
+  }
+
+  .bannerContent {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+  }
+
+  .bannerContent h1 {
+    text-align: center;
+    font-size: var(--primary-font-size);
+  }
+
+  .bannerContent p {
+    text-align: center;
+    font-size: var(--normal-font-size);
+  }
+
+  .bannerContent button {
+    font-size: var(--normal-font-size);
+    padding: 10px 15px;
+    margin-bottom: 30px;
+  }
+
+  .bannerImage {
+    max-width: 100%;
+    height: auto;
+    margin: 60px auto;
+    padding: 0;
+  }
+
+  .mainCamera {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .circle {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+  }
   
 }
 
 /* mid device */
 
 @media screen and (min-width:576px) and (max-width: 768px){
+  /* navBar section */
   .navbar {
     flex-direction: column;
     align-items: center;
   }
+
+  .logo {
+    font-size: var(--secondary-heading-font-size);
+  }
+
   .navLinks>ul {
     padding: 0;
     margin: 0;
+  }
+
+  /* banner section */
+  .banner {
+    column-gap: 20px;
+  }
+
+  .bannerContent {
+    max-width:calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: start;
+  }
+
+  .bannerContent h1 {
+    font-size: var(--secondary-heading-font-size);
+  }
+
+  .bannerContent p {
+    font-size: var(--normal-font-size);
+    text-align: start
+  }
+
+  .bannerContent button {
+    font-size: var(--normal-font-size);
+    padding: 10px 15px;
+    margin-bottom: 30px;
+  }
+
+  .bannerImage {
+    max-width: calc(100% - 50px);
+    height: auto;
+    padding: auto;
+    margin: 0 auto;
+  }
+
+  .mainCamera {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .circle {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
   }
 }
 
